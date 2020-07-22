@@ -1,10 +1,15 @@
+@media screen and (max-width: $desktop) {
+  .section-work {
+    display: none;
+  }
+}
+
 .work-items {
   width: calc((100% - 60px) / 3);
   position: relative;
-}
-
-.work-items:not(:last-child) {
-  margin-right: 30px;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .work-list {

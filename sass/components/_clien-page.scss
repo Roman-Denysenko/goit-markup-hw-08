@@ -1,5 +1,13 @@
 .client {
-  padding-top: 94px;
+  @media screen and (max-width: $desktop - 1px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .title-customers {
@@ -8,15 +16,27 @@
 
 .client-list {
   display: flex;
-  padding-bottom: 94px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $desktop - 1px) {
+    margin: -15px;
+  }
 }
 
 .client-bgt {
   @include centerflex;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  width: 170px;
-  height: 90px;
+
+  @media screen and (max-width: $desktop - 1px) {
+    width: calc((100% - 4 * 15px) / 2);
+    height: 90px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 170px;
+    height: 90px;
+  }
 }
 
 .logo-client {
@@ -45,6 +65,14 @@
   @include centerflex;
 }
 
-.client-items:not(:last-child) {
-  margin-right: 30px;
+@media screen and (min-width: $desktop) {
+  .client-items:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.client-items {
+  @media screen and (max-width: $desktop - 1px) {
+    margin: 15px;
+  }
 }

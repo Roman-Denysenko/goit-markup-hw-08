@@ -2,21 +2,18 @@
   background-color: $third-color;
 }
 
-.section-iteams-team {
-  width: 270px;
-  background-color: $third-color;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
-  border-radius: 0px 0px 4px 4px;
-  padding-bottom: 24px;
-}
-
-.section-iteams-team:not(:last-child) {
-  margin-right: 30px;
-}
+//.section-iteams-team:not(:last-child) {
+//margin-right: 30px;
+//}
 
 .section-items {
-  width: calc((100% - 90px) / 4);
+  @media screen and (min-width: $desktop) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 90px) / 4);
+  }
 }
 
 .container-advantages {
@@ -33,14 +30,22 @@
   align-items: center;
 }
 
-.section-items:not(:last-child) {
-  margin-right: 30px;
-}
+//.section-items:not(:last-child) {
+// margin-right: 30px;
+//}
 
 .advantages {
-  @include centerflex;
-  padding-bottom: 94px;
-  padding-top: 112px;
+  // @include centerflex;
+
+  @media screen and (max-width: $desktop - 1px) {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 94px;
+    padding-top: 94px;
+  }
 }
 
 .section {
@@ -72,7 +77,8 @@
   overflow: hidden;
 }
 
-.section-subtitle {
+.advantages .section-subtitle {
+  text-transform: uppercase;
   margin-bottom: 10px;
 
   color: $main-color-text;
@@ -80,10 +86,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
-}
-
-.advantages .section-subtitle {
-  text-transform: uppercase;
+  text-align: center;
 }
 
 .section-text {

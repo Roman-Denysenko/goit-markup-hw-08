@@ -1,0 +1,36 @@
+.work-items {
+  width: calc((100% - 60px) / 3);
+  position: relative;
+}
+
+.work-items:not(:last-child) {
+  margin-right: 30px;
+}
+
+.work-list {
+  display: flex;
+  padding-bottom: 94px;
+}
+
+.title-work {
+  margin-bottom: 50px;
+}
+
+.work {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  @include centerflex;
+  height: 70px;
+  margin: 0;
+
+  background: rgba(47, 48, 58, 0.8);
+  color: $third-color;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+}

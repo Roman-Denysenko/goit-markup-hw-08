@@ -1,0 +1,50 @@
+.client {
+  padding-top: 94px;
+}
+
+.title-customers {
+  margin-bottom: 50px;
+}
+
+.client-list {
+  display: flex;
+  padding-bottom: 94px;
+}
+
+.client-bgt {
+  @include centerflex;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: 170px;
+  height: 90px;
+}
+
+.logo-client {
+  fill: #afb1b8;
+}
+
+.client-bgt {
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+    transition-duration: $main-time;
+    transition-timing-function: $main-cubic;
+  }
+}
+
+.client-bgt:hover,
+.client-bgt:focus {
+  svg {
+    fill: $accent-color;
+    transition-duration: $main-time;
+    transition-timing-function: $main-cubic;
+  }
+}
+
+.client-link {
+  @include centerflex;
+}
+
+.client-items:not(:last-child) {
+  margin-right: 30px;
+}

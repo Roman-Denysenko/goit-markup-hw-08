@@ -1,0 +1,107 @@
+.header {
+  background-color: $third-color;
+}
+
+.nav {
+  @include centerflex;
+}
+.header {
+  & .link:hover,
+  & .link:focus,
+  & .link-mail:hover,
+  & .link-mail:focus,
+  & .link-tel:hover,
+  & .link-tel:focus {
+    color: $accent-color;
+    transition-duration: $main-time;
+    transition-timing-function: $main-cubic;
+  }
+}
+
+.link-mail,
+.link-tel {
+  color: $second-color-text;
+}
+
+.nav {
+  .link.current {
+    color: $accent-color;
+  }
+}
+
+.nav .link.current {
+  &::after {
+    position: absolute;
+
+    content: '';
+    display: inline-block;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+
+    background-color: $accent-color;
+    border-radius: 2px;
+  }
+}
+
+.nav-list {
+  .nav-items {
+    position: relative;
+  }
+}
+
+.nav-contakt,
+.nav-list {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.nav-list {
+  .link {
+    display: block;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+}
+
+.link-tel,
+.link-mail {
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.nav-list {
+  display: flex;
+  margin-left: 85px;
+}
+
+.nav-contakt,
+.nav-list {
+  .nav-items:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+.nav-contakt {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-contakt .nav-items {
+  @include centerflex;
+}
+.nav-contakt {
+  .link-mail,
+  .link-tel {
+    @include centerflex(inline-flex);
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}

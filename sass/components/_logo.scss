@@ -1,0 +1,14 @@
+.logo-link {
+  font-family: $main-font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.logo-link {
+  .logo-web {
+    color: $accent-color;
+  }
+}

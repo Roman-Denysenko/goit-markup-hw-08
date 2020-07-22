@@ -1,0 +1,78 @@
+.comand {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.profesion {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.section-title-team {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.team-list {
+  display: flex;
+  padding-bottom: 94px;
+}
+
+.team-img {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.team {
+  background-color: #f5f4fa;
+}
+
+.team-social {
+  @include centerflex;
+}
+
+.socials-item {
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    transition-duration: $main-time;
+    transition-timing-function: $main-cubic;
+  }
+  margin-top: 16px;
+}
+
+.socials-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.team-social .socials-item {
+  @include centerflex;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.social-link {
+  display: flex;
+}
+
+.socials-item {
+  .logo-social {
+    align-items: center;
+    fill: #afb1b8;
+  }
+}
+
+.social-link:hover,
+.social-link:focus {
+  svg {
+    fill: $third-color;
+    transition-duration: $main-time;
+    transition-timing-function: $main-cubic;
+  }
+}

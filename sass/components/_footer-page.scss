@@ -31,6 +31,11 @@
 
 .footer {
   background-color: #2f303a;
+
+  @media screen and (max-width: $desktop - 1px) {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
 }
 
 .address {
@@ -62,21 +67,43 @@
 }
 
 .footer-address {
-  margin-top: 65px;
   margin-bottom: 46px;
   width: 230px;
+
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 68px;
+    margin-bottom: 52px;
+  }
 }
 
 .social {
-  margin-left: 69px;
-  margin-top: 77px;
+  margin: 0 auto;
+  margin-top: 60px;
   width: 206px;
+  text-align: center;
 
   color: $third-color;
 
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 69px;
+    margin-top: 77px;
+  }
 }
 
 .social-text {
@@ -86,12 +113,19 @@
 }
 
 .footer-bloks {
-  display: flex;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
 }
 
 .subscription {
-  margin-left: 94px;
-  margin-top: 77px;
+  text-align: center;
+  margin-top: 60px;
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 94px;
+    margin-top: 77px;
+  }
 }
 
 .subscription {
@@ -110,6 +144,12 @@
     line-height: 1.14;
     text-transform: uppercase;
     color: $third-color;
+
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+      text-align: start;
+    }
   }
 }
 
@@ -127,16 +167,25 @@
 }
 
 .footer-input {
-  margin-right: 9px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-bottom: 20px;
+
   padding-left: 16px;
   background-color: #2f303a;
   height: 50px;
-  width: 358px;
+
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.6);
+
+  @media screen and (min-width: $desktop) {
+    width: 358px;
+    margin-right: 9px;
+  }
 }
 
 .footer-input:focus ~ .footer-lable,
@@ -149,6 +198,7 @@
 }
 
 .btn-footer {
+  margin: 0 auto;
   @include centerflex;
   width: 200px;
   height: 50px;
@@ -170,7 +220,16 @@
 }
 
 .input-btn-foot {
-  @include centerflex;
+  @media screen and (min-width: $desktop) {
+    @include centerflex;
+    align-items: baseline;
+  }
+}
+
+.tablet-footer {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 }
 
 //.dbr {

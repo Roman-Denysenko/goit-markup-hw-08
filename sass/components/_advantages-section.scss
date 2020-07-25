@@ -7,12 +7,15 @@
 //}
 
 .section-items {
-  @media screen and (min-width: $desktop) {
-    width: 100%;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
   }
 
   @media screen and (min-width: $desktop) {
-    width: calc((100% - 90px) / 4);
+    width: calc((100% - 8 * 15px) / 4);
   }
 }
 
@@ -35,14 +38,19 @@
 //}
 
 .advantages {
-  // @include centerflex;
-
   @media screen and (max-width: $desktop - 1px) {
     padding-bottom: 60px;
     padding-top: 60px;
   }
 
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
   @media screen and (min-width: $desktop) {
+    @include centerflex;
     padding-bottom: 94px;
     padding-top: 94px;
   }

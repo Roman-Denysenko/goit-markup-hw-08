@@ -23,12 +23,17 @@
   top: 50%;
 
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
+  width: 450px;
+  height: 609px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   background-color: $third-color;
+
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .icon-close {
@@ -53,7 +58,7 @@
 }
 
 .btn-close-modal:hover {
-   .icon-close {
+  .icon-close {
     fill: $accent-color;
   }
 }
@@ -167,14 +172,20 @@
 .security-text {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
 
   color: #757575;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 .checkbox-security {
+  display: block;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -186,7 +197,7 @@
     display: inline-flex;
     height: 16px;
     width: 16px;
-    margin-right: 7px;
+
     border: 3px solid $main-color-text;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 1px 3px rgba(0, 0, 0, 0.12);
@@ -194,6 +205,10 @@
     transition: background-color $main-time $main-cubic,
       background-image $main-time $main-cubic;
     cursor: pointer;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 7px;
+    }
   }
 }
 
@@ -208,11 +223,16 @@
 .security-link {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.17;
   text-decoration-line: underline;
 
   color: $accent-color;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
 }
 
 .security-wrapper {

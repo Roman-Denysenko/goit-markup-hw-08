@@ -5,12 +5,19 @@
   text-align: center;
 }
 .section-iteams-team {
+  width: 100%;
+
   @media screen and (min-width: $tablet) {
-    width: 100%;
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
   }
 
   @media screen and (max-width: $tablet) {
     margin-top: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 8 * 15px) / 4);
   }
 
   //width: 270px;
@@ -35,13 +42,13 @@
 .team-list {
   @media screen and (min-width: $tablet) {
     display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
   }
 }
 
 .team-img {
-  @media screen and (max-width: $tablet) {
-    width: 100%;
-  }
+  width: 100%;
 
   display: block;
   margin-bottom: 30px;

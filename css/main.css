@@ -65,6 +65,7 @@ h6 {
 }
 
 .header {
+  position: relative;
   background-color: #ffffff;
   height: 60px;
   padding-top: 16px;
@@ -134,14 +135,41 @@ h6 {
   border-radius: 2px;
 }
 
-.nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (max-width: 767px) {
+  .nav-list {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .nav-list .nav-items {
   position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-list .nav-items {
+    margin-bottom: 40px;
+  }
+  .nav-list .nav-items.studio {
+    width: 61px;
+    margin-bottom: 52px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -187,6 +215,7 @@ h6 {
 
 .nav-list .link {
   display: block;
+  padding: 8px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -210,9 +239,11 @@ h6 {
   }
 }
 
-.nav-contakt .nav-items:not(:last-child),
-.nav-list .nav-items:not(:last-child) {
-  margin-right: 50px;
+@media screen and (min-width: 768px) {
+  .nav-contakt .nav-items:not(:last-child),
+  .nav-list .nav-items:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -235,7 +266,7 @@ h6 {
 
 @media screen and (min-width: 768px) {
   .nav-contakt {
-    margin-left: auto;
+    margin-left: 84px;
   }
 }
 
@@ -244,7 +275,7 @@ h6 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: auto;
+    margin-left: 305px;
   }
 }
 
@@ -259,6 +290,12 @@ h6 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-items.mail {
+    margin-bottom: 16px;
   }
 }
 
@@ -282,6 +319,20 @@ h6 {
   fill: currentColor;
 }
 
+@media screen and (max-width: 767px) {
+  .nav-mobile-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .logo-link {
   font-family: Roboto, sans-serif;
   font-style: normal;
@@ -289,7 +340,6 @@ h6 {
   font-size: 24px;
   line-height: 1.17;
   letter-spacing: 0.03em;
-  margin-left: 15px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -301,6 +351,76 @@ h6 {
 
 .logo-link .logo-web {
   color: #2196f3;
+}
+
+.menu-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.menu-button:focus .icon-mobile-close,
+.menu-button:focus .icon-mobile-menu,
+.menu-button:hover .icon-mobile-close,
+.menu-button:hover .icon-mobile-menu {
+  fill: #2196f3;
+}
+
+.menu-button .icon-mobile-close {
+  display: none;
+}
+
+.menu-button.is-open .icon-mobile-menu {
+  display: none;
+}
+
+.menu-button.is-open .icon-mobile-close {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu-container {
+    position: absolute;
+    padding: 60px 0;
+    text-align: center;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
+    z-index: 100;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  .menu-container.is-open {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .section-heroy {
@@ -1152,6 +1272,9 @@ h6 {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .port-subtitle {
@@ -1274,6 +1397,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1);
           transform: scale(1);
+  overflow-y: scroll;
 }
 
 .backdrop.is-hidden {

@@ -1,0 +1,63 @@
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.menu-button:focus,
+.menu-button:hover {
+  .icon-mobile-close,
+  .icon-mobile-menu {
+    fill: $accent-color;
+  }
+}
+
+.menu-button .icon-mobile-close {
+  display: none;
+}
+
+.menu-button.is-open {
+  .icon-mobile-menu {
+    display: none;
+  }
+
+  .icon-mobile-close {
+    display: block;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .menu-button {
+    display: none;
+  }
+}
+
+.menu-container {
+  @media screen and (max-width: $tablet - 1px) {
+    position: absolute;
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 4px 8px rgba(0, 0, 0, 0.04);
+    background-color: $third-color;
+    z-index: 100;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

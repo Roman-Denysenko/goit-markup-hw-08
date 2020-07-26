@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   background-color: $third-color;
   height: 60px;
   padding-top: 16px;
@@ -62,10 +63,28 @@
 }
 
 .nav-list {
-  display: flex;
+  @media screen and (max-width: $tablet - 1px) {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 
   .nav-items {
     position: relative;
+
+    @media screen and (max-width: $tablet - 1px) {
+      &.studio {
+        width: 61px;
+        margin-bottom: 52px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      margin-bottom: 40px;
+    }
 
     @media screen and (min-width: $tablet) {
       padding-top: 32px;
@@ -101,6 +120,7 @@
 .nav-list {
   .link {
     display: block;
+    padding: 8px 0;
 
     @media screen and (min-width: $tablet) {
       padding: 0;
@@ -127,8 +147,10 @@
 
 .nav-contakt,
 .nav-list {
-  .nav-items:not(:last-child) {
-    margin-right: 50px;
+  @media screen and (min-width: $tablet) {
+    .nav-items:not(:last-child) {
+      margin-right: 50px;
+    }
   }
 }
 
@@ -148,18 +170,24 @@
   margin-left: auto;
 
   @media screen and (min-width: $tablet) {
-    margin-left: auto;
+    margin-left: 84px;
   }
 
   @media screen and (min-width: $desktop) {
     display: flex;
-    margin-left: auto;
+    margin-left: 305px;
   }
 }
 
 .nav-contakt .nav-items {
   @media screen and (min-width: $desktop) {
     @include centerflex;
+  }
+}
+
+.nav-items.mail {
+  @media screen and (max-width: $tablet - 1px) {
+    margin-bottom: 16px;
   }
 }
 
@@ -175,4 +203,12 @@
   height: 14px;
   margin-right: 10px;
   fill: currentColor;
+}
+
+.nav-mobile-menu {
+  @media screen and (max-width: $tablet - 1px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
